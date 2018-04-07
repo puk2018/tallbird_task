@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	
+	  <link rel="stylesheet" type="text/css" href="style.css"> 
+
+	<script src="form.js"></script>
+
+</head>
+<body>
+	
+		
+	<div class="container">	
+		<h1>Fill in your personal details:</h1>
+	<table>
+	<form  name="myForm">
+		
+<tr><td colspan="2"><label>First Name:</label>
+<input type="text" placeholder="First Name" class=txtheight name="firstname" onkeypress="return  alphabetsOnly(event)"><span id=displayfname></span></td></tr>
+
+
+<tr><td colspan="2"><label>Last Name:</label>
+<input type="text" placeholder="Surname" class=txtheight name="lastname" onkeypress="return  alphabetsOnly(event)"><span id=displaylname></span></td></tr>
+
+
+<tr><td colspan="2"><label>Mobile No:</label>
+<input type="text" placeholder="Mobile number" maxlength="13" value="+91"  class=txtheight name="mobileno"><span  id=displaymob></td></tr>
+
+
+<tr><td colspan="2"><label>Email ID :</label>
+<input type="email" placeholder="Email address"  name="emailadd" class="txtheight"><span id=btnemail></span></td></tr>
+
+
+<tr><td colspan="2"><label>Password :</label>
+<input type="password" placeholder="Password" name="txtpassword" maxlength="8" class="txtheight"><span id=displaypassword></span></td></tr>
+
+
+<tr><td colspan="2"><label>Birthday  : </label>
+<input type="number" min="1" max="31" placeholder="Date" name="dob">
+<select id="selmonth">
+	<option value="0">Month</option>
+	<option value="01">January</option>
+	<option value="02">February</option>
+	<option value="03">March</option>
+	<option value="04">April</option>
+	<option value="05">May</option>
+	<option value="06">June</option>
+	<option value="07">July</option>
+	<option value="08">August</option>
+	<option value="09">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
+</select>
+<input type="number" min="1900" max="2900" placeholder="Year" name="txtyear"><span id=displaydob></span></td></tr>
+
+<tr><td colspan="2"><label>Gender:</label>
+<input type="radio" name="gender" value="Male">Female
+<input type="radio" name="gender" value="Female" >Male
+<span id="rdbtngender"></span></td></tr>
+
+
+<tr><td colspan="2"><input type="button" value="Create Account" id=btnsubmit onclick="funsubmit()"></td></tr>
+
+
+</form>
+</table>
+</div>
+</body>
+</html>

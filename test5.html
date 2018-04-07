@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+           h1{
+                text-align: center;
+                text-decoration-line: underline;
+             }
+
+
+    table th{
+
+      	          background-color:black;
+      	          color: white; 
+
+            }
+            
+
+ tr:nth-child(2n){
+		           background-color: 	#7FFFD4;
+	             }
+
+
+tr:nth-child(2n+1){
+		            background-color: #5F9EA0;
+	              }
+</style>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.getJSON("https://jsonplaceholder.typicode.com/users",function(data){
+			var employee_data='';
+			$.each(data,function(key,value){
+				employee_data+='<tr>';
+				employee_data+='<td>'+value.id+'</td>';
+				employee_data+='<td>'+value.name+'</td>';
+				employee_data+='<td>'+value.username+'</td>';
+				employee_data+='<td>'+value.email+'</td>';
+				employee_data+='<td>'+value.address.street+value.address.suite+value.address.city+value.address.zipcode+'</td>';				
+				employee_data+='<td>'+value.phone+'</td>';
+				employee_data+='<td>'+value.website+'</td>';
+				employee_data+='<td>'+value.company.name+value.company.catchPhrase+value.company.bs+'</td>';
+			});
+			$('#table').append(employee_data);
+		});
+});
+</script>
+</head>
+<body>	
+
+	<h1>Employee Information</h1>
+	<table id="table">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>UserName</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>Phone</th>
+			<th>Website</th>
+			<th>Company</th>
+		</tr>
+	</table>
+</body>
+</html>
